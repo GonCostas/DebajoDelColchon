@@ -5,7 +5,7 @@ import IconoInfo from "./IconoInfo";
 
 const DolarOficial = () => {
   const [oficial, setOficial] = useState<DolarOficialDatos | null>(null);
-
+  
   useEffect(() => {
     async function obtenerDolarOficial() {
       try {
@@ -14,6 +14,7 @@ const DolarOficial = () => {
         );
         const datos: DolarOficialDatos = await respuesta.json();
         setOficial(datos);
+
       } catch (error) {
         console.error("Error al obtener los datos:", error);
       }
@@ -33,19 +34,22 @@ const DolarOficial = () => {
       {oficial ? (
         <div>
           <div className="grupoUno">
-            <p className="monedaDolar"></p>
             <p className="compraDolar">
-              <strong>Compra:</strong> ${oficial.compra}
+              <strong>Compra: </strong> ${oficial.compra}
             </p>
             <p className="ventaDolar">
-              <strong>Venta:</strong> ${oficial.venta}
+              <strong>Venta: </strong> ${oficial.venta}
             </p>
           </div>
+            <p><strong>Diferencia:</strong> ${(oficial.venta - oficial.compra).toLocaleString("es-AR", {
+              minimumFractionDigits: 2, 
+              maximumFractionDigits: 2,
+            })}</p>
 
           <p className="actualizacionDolar">
             <strong>
-              Última actualización:{String.fromCodePoint(0x23f3)}{" "}
-            </strong>{" "}
+              Última actualización:{String.fromCodePoint(0x23f3)}
+            </strong>
             {oficial.fechaActualizacion
               ? new Date(oficial.fechaActualizacion).toLocaleString("es-ES", {
                   year: "numeric",

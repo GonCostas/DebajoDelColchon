@@ -7,8 +7,8 @@ body {
 }
 
 .barraArriba{
-    background-color:rgb(29, 79, 27);
-    height: 300px;
+    background-color:rgb(23, 66, 21);
+    height: 60%;
 }
 
 .tituloApp {
@@ -21,6 +21,7 @@ body {
 
 .cajaUno {
   display: flex;
+
   gap: 100px;
   border-radius: 35px 35px 35px 35px;
   position: absolute;

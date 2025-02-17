@@ -40,7 +40,10 @@ const DolarCripto = () => {
               <strong>Venta: </strong>${dolarCripto.venta}
             </p>
           </div>
-
+          <p><strong>Diferencia: </strong> ${(dolarCripto.venta - dolarCripto.compra).toLocaleString("es-AR",{
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+          })}</p>
           <p className="fechaCripto">
             <strong>Ultima actualizacion: </strong>
             {dolarCripto.fechaActualizacion

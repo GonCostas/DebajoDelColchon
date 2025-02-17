@@ -42,7 +42,10 @@ const DolarTarjeta = () => {
               <strong>Venta: </strong>${dolarTarjeta.venta}
             </p>
           </div>
-
+          <p><strong>Diferencia: </strong>${(dolarTarjeta.venta - dolarTarjeta.compra).toLocaleString("es-AR",{
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+          })}</p>
           <p className="fecha">
             <strong>Ultima actualizacion: </strong>
             {dolarTarjeta.fechaActualizacion

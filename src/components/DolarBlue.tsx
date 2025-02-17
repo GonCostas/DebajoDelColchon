@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { DolarBlueDatos } from "../services/types/DolarBlueDatos";
 import "../css/dolarBlue.css";
 import IconoInfo from "./IconoInfo";
+
 const DolarBlue = () => {
   const [dolarBlue, setDolarBlue] = useState<DolarBlueDatos | null>(null);
 
@@ -30,27 +31,40 @@ const DolarBlue = () => {
           texto="Cotización del dólar estadounidense en el mercado paralelo o informal. Es decir, el precio de compra y venta de dólares en cuevas o casas de cambio no autorizadas por el Banco Central de la República Argentina (BCRA)."
         />
       </h2>
-      <div className="grupoBlue">
-        <p className="compraBlue">
-          <strong>Compra: </strong>${dolarBlue?.compra}
+      {dolarBlue ? (
+        <div >
+        <div className="grupoBlue">
+          <p className="compraBlue">
+          <strong>Compra: </strong>${dolarBlue.compra}
+          </p>
+          <p className="ventaBlue">
+          <strong>Venta: </strong>${dolarBlue.venta}
         </p>
-        <p className="ventaBlue">
-          <strong>Venta: </strong>${dolarBlue?.venta}
-        </p>
+        </div>
+        <p><strong>Diferencia: </strong> ${(dolarBlue.venta - dolarBlue.compra).toLocaleString("es-AR", {
+              minimumFractionDigits: 2, 
+              maximumFractionDigits: 2,
+            })}</p>
+         <p className="actualizacionBlue">
+         <strong>Ultima actualización: {String.fromCodePoint(0x23f3)} </strong>
+         {dolarBlue.fechaActualizacion
+           ? new Date(dolarBlue.fechaActualizacion).toLocaleString("es-ES", {
+               year: "numeric",
+               month: "long",
+               day: "numeric",
+               hour: "2-digit",
+               minute: "2-digit",
+             })
+           : "Cargando..."}
+       </p>
+       </div>
+
+      ) : (<p>
+        Cargando datos...
+      </p>)}
       </div>
-      <p className="actualizacionBlue">
-        <strong>Ultima actualización: {String.fromCodePoint(0x23f3)} </strong>
-        {dolarBlue?.fechaActualizacion
-          ? new Date(dolarBlue.fechaActualizacion).toLocaleString("es-ES", {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-              hour: "2-digit",
-              minute: "2-digit",
-            })
-          : "Cargando..."}
-      </p>
-    </div>
+    
+      
   );
 };
 export default DolarBlue;

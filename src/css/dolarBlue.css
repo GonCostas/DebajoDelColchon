@@ -14,11 +14,13 @@
     font-weight: bold;
     color: #2D4818; /* Verde oscuro */
 }
-.grupoUno {
+.grupoBlue {
   display: flex;
   justify-content: center;
-  gap: 10px
+  gap: 20px;
 }
+
+
 
 .compraBlue {
   display: inline-block;

@@ -14,7 +14,7 @@ function App() {
       <body>
         <div className="barraArriba">
           <h1 className="tituloApp">BAJO EL COLCHÓN</h1>
-          <h2 className="tituloApp">DOLAR HOY</h2>
+          <h2 className="tituloApp">COTIZACION DEL DOLAR HOY</h2>
         </div>
 
         <div className="cajaUno">
