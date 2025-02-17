@@ -1,0 +1,39 @@
+body {
+  position: relative;
+  background-color: #f2f4f2; /* Gris claro */
+  display: flex;
+  height: 100vh;
+  display: grid;
+}
+
+.barraArriba{
+    background-color:rgb(29, 79, 27);
+    height: 300px;
+}
+
+.tituloApp {
+  text-align: center;
+  color: rgb(253, 255, 253);
+  border: #000000;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cajaUno {
+  display: flex;
+  gap: 100px;
+  border-radius: 35px 35px 35px 35px;
+  position: absolute;
+  top: 200px;
+  left: 100px;
+  
+}
+
+.cajaDos {
+  display: flex;
+  gap: 100px;
+  border-radius: 35px 35px 35px 35px;
+  position: absolute;
+  top: 600px;
+  left: 100px;
+}
