@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { DolarCriptoDatos } from "../services/types/DolarCriptoDatos";
-import "../css/dolarCripto.css";
-import IconoInfo from "./IconoInfo";
+import { DolarCriptoDatos } from "../../services/types/DolarCriptoDatos"; 
+import "../../css/dolarCripto.css";
+import IconoInfo from "../IconoInfo";
 
 const DolarCripto = () => {
   const [dolarCripto, setDolarCripto] = useState<DolarCriptoDatos | null>(null);

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { DolarOficialDatos } from "../services/types/DolarOficialDatos";
-import "../css/dolarOficiial.css";
-import IconoInfo from "./IconoInfo";
+import { DolarOficialDatos } from "../../services/types/DolarOficialDatos"; 
+import "../../css/dolarOficiial.css";
+import IconoInfo from "../IconoInfo";
 
 const DolarOficial = () => {
   const [oficial, setOficial] = useState<DolarOficialDatos | null>(null);
