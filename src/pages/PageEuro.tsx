@@ -1,8 +1,14 @@
-
+import Euro from "../components/Euro/Euro";
 
 const PageEuro = () =>{
     return(
-        <div>aqui va la info del euro</div>
+        <div>
+            <h2 className="tituloPrincipal">COTIZACION DEL DOLAR HOY</h2>
+            <div className="posicionEuro">
+                <Euro/>
+            </div>
+            
+        </div>
     )
 }
 

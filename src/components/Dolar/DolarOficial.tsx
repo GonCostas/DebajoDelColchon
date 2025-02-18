@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react";
-import { DolarOficialDatos } from "../../services/types/DolarOficialDatos"; 
-import "../../css/dolarOficiial.css";
+import { DolarDatos } from "../../services/types/DolarDatos";
+import "../../css/caja.css";
 import IconoInfo from "../IconoInfo";
 
 const DolarOficial = () => {
-  const [oficial, setOficial] = useState<DolarOficialDatos | null>(null);
-  
+  const [oficial, setOficial] = useState<DolarDatos | null>(null);
+
   useEffect(() => {
     async function obtenerDolarOficial() {
       try {
         const respuesta = await fetch(
           "https://dolarapi.com/v1/dolares/oficial"
         );
-        const datos: DolarOficialDatos = await respuesta.json();
+        const datos: DolarDatos = await respuesta.json();
         setOficial(datos);
-
       } catch (error) {
         console.error("Error al obtener los datos:", error);
       }
@@ -23,7 +22,7 @@ const DolarOficial = () => {
   }, []);
 
   return (
-    <div className="dolarOficial">
+    <div className="caja">
       <h2 className="titulo">
         DOLAR OFICIAL
         <IconoInfo
@@ -33,23 +32,32 @@ const DolarOficial = () => {
       </h2>
       {oficial ? (
         <div>
-          <div className="grupoUno">
-            <p className="compraDolar">
-              <strong>Compra: </strong> ${oficial.compra}
+          <div className="grupo">
+            <p className="compra">
+              <strong>Compra: </strong> $
+              {oficial.compra.toLocaleString("es-AR", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              })}
             </p>
-            <p className="ventaDolar">
-              <strong>Venta: </strong> ${oficial.venta}
+            <p className="venta">
+              <strong>Venta: </strong> $
+              {oficial.venta.toLocaleString("es-AR", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              })}
             </p>
           </div>
-            <p><strong>Diferencia:</strong> ${(oficial.venta - oficial.compra).toLocaleString("es-AR", {
-              minimumFractionDigits: 2, 
+          <p>
+            <strong>Diferencia:</strong> $
+            {(oficial.venta - oficial.compra).toLocaleString("es-AR", {
+              minimumFractionDigits: 2,
               maximumFractionDigits: 2,
-            })}</p>
+            })}
+          </p>
 
-          <p className="actualizacionDolar">
-            <strong>
-              Última actualización:{String.fromCodePoint(0x23f3)}
-            </strong>
+          <p className="actualizacion">
+            <strong>Última actualización:{String.fromCodePoint(0x23f3)}</strong>
             {oficial.fechaActualizacion
               ? new Date(oficial.fechaActualizacion).toLocaleString("es-ES", {
                   year: "numeric",

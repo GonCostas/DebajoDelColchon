@@ -2,7 +2,6 @@ import "../css/NavBar.css";
 
 
 
-
 const NavBar: React.FC = () => {
   return (
     <nav className="navBar">

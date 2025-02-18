@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
-import { DolarCriptoDatos } from "../../services/types/DolarCriptoDatos"; 
-import "../../css/dolarCripto.css";
+import { DolarDatos } from "../../services/types/DolarDatos";
+import "../../css/caja.css";
 import IconoInfo from "../IconoInfo";
 
 const DolarCripto = () => {
-  const [dolarCripto, setDolarCripto] = useState<DolarCriptoDatos | null>(null);
+  const [dolarCripto, setDolarCripto] = useState<DolarDatos | null>(null);
 
   useEffect(() => {
     async function obtenerDolarCripto() {
       try {
         const respuesta = await fetch("https://dolarapi.com/v1/dolares/cripto");
-        const datos: DolarCriptoDatos = await respuesta.json();
+        const datos: DolarDatos = await respuesta.json();
         setDolarCripto(datos);
       } catch (error) {
         console.log("Error al obneter los datos de dolar cripto", error);
@@ -20,8 +20,8 @@ const DolarCripto = () => {
   }, []);
 
   return (
-    <div className="dolarCripto">
-      <h2 className="tituloCripto">
+    <div className="caja">
+      <h2 className="titulo">
         DOLAR CRIPTO
         <IconoInfo
           id="tooltip-dolarCripto"
@@ -32,20 +32,31 @@ const DolarCripto = () => {
 
       {dolarCripto ? (
         <div>
-          <div className="grupoCripto">
-            <p className="compraCripto">
-              <strong>Compra: </strong>${dolarCripto.compra}
+          <div className="grupo">
+            <p className="compra">
+              <strong>Compra: </strong>$
+              {dolarCripto.compra.toLocaleString("es-AR", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              })}
             </p>
-            <p className="ventaCripto">
-              <strong>Venta: </strong>${dolarCripto.venta}
+            <p className="venta">
+              <strong>Venta: </strong>$
+              {dolarCripto.venta.toLocaleString("es-AR", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              })}
             </p>
           </div>
-          <p><strong>Diferencia: </strong> ${(dolarCripto.venta - dolarCripto.compra).toLocaleString("es-AR",{
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2,
-          })}</p>
-          <p className="fechaCripto">
-            <strong>Ultima actualizacion: </strong>
+          <p>
+            <strong>Diferencia: </strong> $
+            {(dolarCripto.venta - dolarCripto.compra).toLocaleString("es-AR", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
+          </p>
+          <p className="actualizacion">
+            <strong>Última actualización: </strong>
             {dolarCripto.fechaActualizacion
               ? new Date(dolarCripto.fechaActualizacion).toLocaleString(
                   "es-ES",

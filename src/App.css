@@ -1,7 +1,6 @@
 body{
   position: relative;
-  background-color:rgb(23, 66, 21);
-  display: flex;
+  background-color:rgb(20, 41, 20);
   height: 100vh;
   display: grid;
   margin: 0;
@@ -10,6 +9,35 @@ body{
   height: 100%;
 }
 
+.grafico {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between; /* Distribuye las barras */
+  pointer-events: none; /* No interfiere con otros elementos */
+  z-index: -1; /* Lo pone detrás del contenido */
+}
 
+.barra {
+  width: 10px;
+  background-color:rgb(20, 117, 20);
+  height: 50px; /* Altura inicial */
+  animation: subirBajar 10s infinite alternate ease-in-out;
+}
 
+/* Animación de subida y bajada */
+@keyframes subirBajar {
+  0% { height: 10px; }
+  100% { height: 100px; }
+}
 
+/* Variaciones en duración para que sea aleatorio */
+.barra:nth-child(3n) { animation-duration: 9s; }
+.barra:nth-child(4n) { animation-duration: 9.5s; }
+.barra:nth-child(5n) { animation-duration: 10.5s; }
+.barra:nth-child(6n) { animation-duration: 11s; }
+.barra:nth-child(7n) { animation-duration: 11.5s; }

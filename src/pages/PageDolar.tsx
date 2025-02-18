@@ -1,8 +1,10 @@
-import DolarOficial from "../components/componentsDolar/DolarOficial";
-import DolarBlue from "../components/componentsDolar/DolarBlue";
-import DolarCripto from "../components/componentsDolar/DolarCripto";
-import DolarTarjeta from "../components/componentsDolar/DolarTarjeta";
+import DolarOficial from "../components/Dolar/DolarOficial";
+import DolarBlue from "../components/Dolar/DolarBlue";
+import DolarCripto from "../components/Dolar/DolarCripto";
+import DolarTarjeta from "../components/Dolar/DolarTarjeta";
 import "../css/pageDolar.css"
+import DolarBolsa from "../components/Dolar/DolarBolsa";
+import DolarMayorista from "../components/Dolar/DolarMayorista";
 
 const PageDolar = () => {
   return (
@@ -11,11 +13,12 @@ const PageDolar = () => {
       <div className="cajaUno">
         <DolarOficial />
         <DolarBlue />
-      </div>
-      <div className="cajaDos">
         <DolarTarjeta />
         <DolarCripto />
+        <DolarBolsa/>
+        <DolarMayorista/>
       </div>
+
     </div>
   );
 };
