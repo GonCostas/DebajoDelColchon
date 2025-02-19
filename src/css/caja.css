@@ -1,61 +1,57 @@
-.caja{
-    background-color: rgb(157, 164, 156);
-    padding: 1px;
-    border-radius: 15px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    width: 400px;
-    margin: auto;
-      
-  }
-  
-  .titulo{
-    font-size: 20px;
-    font-weight: bold;
-    color: #2d4818; /* Verde oscuro */
-  }
-  .grupo {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  
-  
-  .compra {
-    display: inline-block;
-    padding: 5px 20px;
-    background-color: #248b1b;
-    color: azure;
-    font-size: 20px;
-    font-weight: bold;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    text-align: center;
-    box-shadow: 3px 3px 10px #083e03;
-  }
-  
-  .venta {
-    display: inline-block;
-    padding: 5px 20px;
-    background-color: #4982e4;
-    color: azure;
-    font-size: 20px;
-    font-weight: bold;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    text-align: center;
-    box-shadow: 3px 3px 10px #264f96;
-  }
-  
-  .actualizacion {
-    background-color: black;
-    color: white;
-    padding: 1px;
-    border-radius: 10px;
-    font-size: 15px;
-    margin-top: 20px;
-  
-  }
+.caja {
+  background-color: rgb(157, 164, 156);
+  padding: 1px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 400px;
+  margin: auto;
+}
+
+.titulo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2d4818; 
+}
+.grupo {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.compra {
+  display: inline-block;
+  padding: 5px 20px;
+  background-color: #248b1b;
+  color: azure;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 3px 3px 10px #083e03;
+}
+
+.venta {
+  display: inline-block;
+  padding: 5px 20px;
+  background-color: #4982e4;
+  color: azure;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 3px 3px 10px #264f96;
+}
+
+.actualizacion {
+  background-color: black;
+  color: white;
+  padding: 1px;
+  border-radius: 10px;
+  font-size: 15px;
+  margin-top: 20px;
+}

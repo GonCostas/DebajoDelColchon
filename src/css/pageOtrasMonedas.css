@@ -1,0 +1,16 @@
+.tituloPrincipal {
+  text-align: center;
+  position: center;
+  color: rgb(255, 255, 255);
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  margin-top: 7%;
+}
+
+.posicion{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}

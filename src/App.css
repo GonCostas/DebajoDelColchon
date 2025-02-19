@@ -17,19 +17,19 @@ body{
   height: 100vh;
   display: flex;
   align-items: flex-end;
-  justify-content: space-between; /* Distribuye las barras */
-  pointer-events: none; /* No interfiere con otros elementos */
-  z-index: -1; /* Lo pone detrás del contenido */
+  justify-content: space-between; 
+  pointer-events: none; 
+  z-index: -1; 
 }
 
 .barra {
   width: 10px;
   background-color:rgb(20, 117, 20);
-  height: 50px; /* Altura inicial */
+  height: 50px; 
   animation: subirBajar 10s infinite alternate ease-in-out;
 }
 
-/* Animación de subida y bajada */
+
 @keyframes subirBajar {
   0% { height: 10px; }
   100% { height: 100px; }

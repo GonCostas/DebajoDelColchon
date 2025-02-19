@@ -40,13 +40,14 @@ const DolarTarjeta = () => {
           <div className="grupo">
             <p className="compra">
               <strong>Compra: </strong>$
-              {(dolarTarjeta.compra).toLocaleString("es-AR", {
+              {dolarTarjeta.compra.toLocaleString("es-AR", {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
               })}
             </p>
             <p className="venta">
-              <strong>Venta: </strong>${(dolarTarjeta.venta).toLocaleString("es-AR", {
+              <strong>Venta: </strong>$
+              {dolarTarjeta.venta.toLocaleString("es-AR", {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
               })}

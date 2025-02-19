@@ -16,6 +16,7 @@ function App() {
       ))}
     </div>
       <Routes>
+        <Route path="/" element={<PageDolar/>}/>
         <Route path="/pageDolar" element={<PageDolar/>}/>
         <Route path="/pageEuro" element={<PageEuro/>}/>
         <Route path="/pageInflacion" element={<PageInflacion/>}/>

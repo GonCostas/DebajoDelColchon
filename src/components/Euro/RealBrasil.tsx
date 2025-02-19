@@ -3,38 +3,38 @@ import { DolarDatos } from "../../services/types/DolarDatos";
 import IconoInfo from "../IconoInfo";
 import "../../css/caja.css"
 
-const Euro = () => {
-  const [euro, setEuro] = useState<DolarDatos | null>(null);
+const RealBrasil = () => {
+  const [real, setReal] = useState<DolarDatos | null>(null);
 
   useEffect(() => {
-    async function obtenerDatosEuro() {
+    async function obtenerDatosReal() {
       try {
         const respuesta = await fetch(
-          "https://dolarapi.com/v1/cotizaciones/eur"
+          "https://dolarapi.com/v1/cotizaciones/brl"
         );
         const datos: DolarDatos = await respuesta.json();
-        setEuro(datos);
+        setReal(datos);
       } catch (error) {
         console.log("Error al obtener los datos", error);
       }
     }
-    obtenerDatosEuro();
+    obtenerDatosReal();
   }, []);
 
   return (
     <div className="caja">
       <h2 className="titulo">
-        EURO
+        REAL BRASILEÑO
         <IconoInfo
           id="tooltip-dolarEuro"
-          texto="Cotización del Real Brasileño en el mercado."
+          texto="Cotización del Euro en el mercado."
         />
       </h2>
-      {euro ? (
+      {real ? (
         <div>
           <div className="grupo">
             <p className="compra">
-              <strong>Compra: </strong> ${(euro.compra).toLocaleString("es-AR",
+              <strong>Compra: </strong> ${(real.compra).toLocaleString("es-AR",
                 {
                   minimumFractionDigits: 2,
                   maximumFractionDigits: 2, 
@@ -42,7 +42,7 @@ const Euro = () => {
               )}
             </p>
             <p className="venta">
-              <strong>Venta: </strong>${(euro.venta).toLocaleString("es-AR",{
+              <strong>Venta: </strong>${(real.venta).toLocaleString("es-AR",{
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
               })}
@@ -50,15 +50,15 @@ const Euro = () => {
           </div>
           <p >
             <strong>Diferencia: </strong>${" "}
-            {(euro.venta - euro.compra).toLocaleString("es-Ar", {
+            {(real.venta - real.compra).toLocaleString("es-Ar", {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
             })}
           </p>
           <p className="actualizacion">
             <strong>Ultima actualización</strong>
-            {euro.fechaActualizacion
-              ? new Date(euro.fechaActualizacion).toLocaleDateString("es-ES", {
+            {real.fechaActualizacion
+              ? new Date(real.fechaActualizacion).toLocaleDateString("es-ES", {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
@@ -75,4 +75,4 @@ const Euro = () => {
   );
 };
 
-export default Euro;
+export default RealBrasil;

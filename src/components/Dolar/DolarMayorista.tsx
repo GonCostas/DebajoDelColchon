@@ -25,7 +25,7 @@ const DolarMayorista = () => {
         DOLAR MAYORISTA
         <IconoInfo
           id="tooltip-dolarMayor"
-          texto="Cotización del dólar estadounidense en el mercado de criptomonedas. Es decir, el precio de compra y venta de dólares en el mercado de criptoactivos."
+          texto="Cotización del dólar estadounidense en el mercado mayorista. Es decir, el precio de compra y venta de dólares en el mercado interbancario."
         />
       </h2>
 
