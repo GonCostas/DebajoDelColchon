@@ -15,10 +15,13 @@ function App() {
         ))}
       </div>
       <Routes>
-        <Route path="/DebajoDelColchón/" element={<PageDolar />} />
-        <Route path="/DebajoDelColchón/pageDolar" element={<PageDolar />} />
-        <Route path="/DebajoDelColchón/pageEuro" element={<PageEuro />} />
-        <Route path="/DebajoDelColchón/pageInflacion" element={<PageInflacion />} />
+        <Route path="/DebajoDelColchon/" element={<PageDolar />} />
+        <Route path="/DebajoDelColchon/pageDolar" element={<PageDolar />} />
+        <Route path="/DebajoDelColchon/pageEuro" element={<PageEuro />} />
+        <Route
+          path="/DebajoDelColchon/pageInflacion"
+          element={<PageInflacion />}
+        />
       </Routes>
     </Router>
   );
