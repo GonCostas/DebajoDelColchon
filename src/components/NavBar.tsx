@@ -8,9 +8,9 @@ const NavBar: React.FC = () => {
       <div className="appName">DEBAJO DEL COLCHÓN</div>
 
       <div className="links">
-        <a href="/DebajoDelColchon/Dolar" className="link">DOLAR</a>
-        <a href="/DebajoDelColchon/Euro" className="link">EURO</a>
-        <a href="/DebajoDelColchon/Inflacion" className="link">INFLACION</a>
+        <a href="/DebajoDelColchón/PageDolar" className="link">DOLAR</a>
+        <a href="/DebajoDelColchón/PageEuro" className="link">EURO</a>
+        <a href="/DebajoDelColchón/PageInflacion" className="link">INFLACION</a>
       </div>
     </nav>
   );
