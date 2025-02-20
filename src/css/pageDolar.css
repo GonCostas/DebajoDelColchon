@@ -4,12 +4,12 @@
   font-weight: 700;
   margin-top: 70px;
   text-align: center;
-  color: #008F68 ; /* Amarillo dorado */
+  color: #008F68 ;
   text-transform: uppercase;
   letter-spacing: 2px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   padding: 10px 0;
-  border-bottom: 3px solid #008F68 ; /* Línea dorada */
+  border-bottom: 3px solid #008F68 ; 
   }
   
   .cajaUno {

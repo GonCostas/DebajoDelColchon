@@ -1,64 +1,82 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;500;700&display=swap');
 .caja {
   background-color: #F2F2F2;
-  padding: 10px;
+  padding: 15px;
   border-radius: 12px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
   text-align: center;
-  width: 270px;
-  font-family: 'Roboto', sans-serif;
-  margin: 15px;
+  width: 90%; /* Se adapta mejor en móviles */
+  max-width: 300px; /* No crece demasiado en pantallas grandes */
+  margin: 15px auto; /* Centrado */
 }
 
+/* Títulos */
 h1, h2, h3 {
-  font-family: 'Lato', sans-serif; /* Para títulos */
-  font-weight: 700; /* Negrita */
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
 }
 
+/* Texto del título */
 .titulo {
   font-size: 20px;
   font-weight: bold;
-  color: #008F68 ; 
+  color: #008F68;
 }
+
+/* Contenedor flex */
 .grupo {
   display: flex;
   justify-content: center;
   gap: 10px;
+  flex-wrap: wrap; /* Evita que los elementos se salgan de la pantalla */
 }
 
-.compra {
+/* Botones compra/venta */
+.compra, .venta {
   display: inline-block;
-  padding: 5px 20px;
-  background-color: #008F68 ;
+  padding: 8px 20px;
+  background-color: #008F68;
   color: azure;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   border: none;
   border-radius: 15px;
   cursor: pointer;
   text-align: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.venta {
-  display: inline-block;
-  padding: 5px 20px;
-  background-color: #008F68 ;
-  color: azure;
-  font-size: 20px;
-  font-weight: bold;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  text-align: center;
-  box-shadow:0px 4px 10px rgba(0, 0, 0, 0.3);;
-}
-
+/* Última actualización */
 .actualizacion {
   background-color: black;
   color: white;
-  padding: 1px;
+  padding: 5px 10px;
   border-radius: 10px;
-  font-size: 15px;
-  margin-top: 20px;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+/* 🔥 RESPONSIVE para celulares */
+@media (max-width: 480px) {
+  .caja {
+    width: 95%;
+    max-width: 280px;
+    padding: 10px;
+  }
+
+  .grupo {
+    flex-direction: column; /* Acomoda los botones uno debajo del otro */
+    gap: 5px;
+  }
+
+  .compra, .venta {
+    font-size: 16px;
+    padding: 6px 15px;
+    width: 80%; /* Que no ocupen toda la pantalla */
+    margin: 0 auto; /* Centrar */
+  }
+
+  .actualizacion {
+    font-size: 12px;
+  }
 }
