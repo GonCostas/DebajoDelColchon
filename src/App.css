@@ -1,6 +1,6 @@
 body{
   position: relative;
-  background-color:rgb(20, 41, 20);
+  background-color:#FFFFFF;
   height: 100vh;
   display: grid;
   margin: 0;
@@ -24,7 +24,7 @@ body{
 
 .barra {
   width: 10px;
-  background-color:rgb(20, 117, 20);
+  background-color:#008F68 ;
   height: 50px; 
   animation: subirBajar 10s infinite alternate ease-in-out;
 }

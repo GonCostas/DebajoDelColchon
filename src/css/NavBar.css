@@ -15,7 +15,7 @@
 .appName {
   font-size: 1.5rem;
   font-weight: bold;
-  color: rgb(253, 255, 253);
+  color: #008F68 ;
   padding: 5px;
   left: 0;
   fill: none;
@@ -29,7 +29,7 @@
   color: #fff;
   text-decoration:none;
   font-size: 1rem;
-  color: rgb(253, 255, 253);
+  color: #008F68 ;
   height: 10px;
   padding: 15px;
   text-align:unset;

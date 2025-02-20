@@ -1,28 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;500;700&display=swap');
 .caja {
-  background-color: rgb(157, 164, 156);
-  padding: 1px;
-  border-radius: 15px;
+  background-color: #F2F2F2;
+  padding: 10px;
+  border-radius: 12px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
   text-align: center;
-  width: 400px;
-  margin: auto;
+  width: 270px;
+  font-family: 'Roboto', sans-serif;
+  margin: 15px;
+}
+
+h1, h2, h3 {
+  font-family: 'Lato', sans-serif; /* Para títulos */
+  font-weight: 700; /* Negrita */
 }
 
 .titulo {
   font-size: 20px;
   font-weight: bold;
-  color: #2d4818; 
+  color: #008F68 ; 
 }
 .grupo {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 .compra {
   display: inline-block;
   padding: 5px 20px;
-  background-color: #248b1b;
+  background-color: #008F68 ;
   color: azure;
   font-size: 20px;
   font-weight: bold;
@@ -30,13 +37,13 @@
   border-radius: 15px;
   cursor: pointer;
   text-align: center;
-  box-shadow: 3px 3px 10px #083e03;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);;
 }
 
 .venta {
   display: inline-block;
   padding: 5px 20px;
-  background-color: #4982e4;
+  background-color: #008F68 ;
   color: azure;
   font-size: 20px;
   font-weight: bold;
@@ -44,7 +51,7 @@
   border-radius: 15px;
   cursor: pointer;
   text-align: center;
-  box-shadow: 3px 3px 10px #264f96;
+  box-shadow:0px 4px 10px rgba(0, 0, 0, 0.3);;
 }
 
 .actualizacion {
