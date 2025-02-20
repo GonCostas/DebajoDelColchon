@@ -4,6 +4,9 @@ import NavBar from "./components/NavBar";
 import PageEuro from "./pages/PageEuro";
 import PageDolar from "./pages/PageDolar";
 import PageInflacion from "./pages/PageInflacion";
+import Footer from "./components/Footer";
+import PageTyC from "./pages/PageTyC";
+
 
 function App() {
   return (
@@ -22,7 +25,9 @@ function App() {
           path="/DebajoDelColchon/pageInflacion"
           element={<PageInflacion />}
         />
+         <Route path="/terminos-condiciones" element={<PageTyC />} />
       </Routes>
+      <Footer/>
     </Router>
   );
 }

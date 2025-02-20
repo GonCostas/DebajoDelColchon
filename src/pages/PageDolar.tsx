@@ -9,7 +9,7 @@ import DolarMayorista from "../components/Dolar/DolarMayorista";
 const PageDolar = () => {
   return (
     <div>
-      <h2 className="tituloDos">COTIZACION DEL DOLAR HOY</h2>
+      <h2 className="tituloDos">COTIZACION DEL DOLAR</h2>
       <div className="cajaUno">
         <DolarOficial />
         <DolarBlue />
