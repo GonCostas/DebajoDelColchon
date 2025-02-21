@@ -1,65 +1,64 @@
 import { useEffect, useState } from "react";
 import { DatosMonedas } from "../../services/types/DatosMonedas";
-import "../../css/caja.css";
 import IconoInfo from "../IconoInfo";
+import "../../css/caja.css";
 
-const DolarOficial = () => {
-  const [oficial, setOficial] = useState<DatosMonedas | null>(null);
+const PesoUruguayo = () => {
+  const [peso, setPeso] = useState<DatosMonedas | null>(null);
 
   useEffect(() => {
-    async function obtenerDolarOficial() {
+    async function obtenerDatosPeso() {
       try {
         const respuesta = await fetch(
-          "https://dolarapi.com/v1/dolares/oficial"
+          "https://dolarapi.com/v1/cotizaciones/brl"
         );
-        const datos: DatosMonedas = await respuesta.json();
-        setOficial(datos);
+        const datos: DatosMonedas= await respuesta.json();
+        setPeso(datos);
       } catch (error) {
-        console.error("Error al obtener los datos:", error);
+        console.log("Error al obtener los datos", error);
       }
     }
-    obtenerDolarOficial();
+    obtenerDatosPeso();
   }, []);
 
   return (
     <div className="caja">
       <h2 className="titulo">
-        DOLAR OFICIAL
+        PESO URUGUAYO
         <IconoInfo
-          id="tooltip-dolarOficial"
-          texto="Cotización del dólar estadounidense en el mercado oficial. Es decir, el precio de compra y venta de dólares en bancos y casas de cambio autorizadas por el Banco Central de la República Argentina (BCRA)."
+          id="tooltip-dolarEuro"
+          texto="Cotización del Euro en el mercado."
         />
       </h2>
-      {oficial ? (
+      {peso ? (
         <div>
           <div className="grupo">
             <p className="compra">
               <strong>Compra: </strong> $
-              {oficial.compra.toLocaleString("es-AR", {
+              {peso.compra.toLocaleString("es-AR", {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
               })}
             </p>
             <p className="venta">
-              <strong>Venta: </strong> $
-              {oficial.venta.toLocaleString("es-AR", {
+              <strong>Venta: </strong>$
+              {peso.venta.toLocaleString("es-AR", {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
               })}
             </p>
           </div>
           <p>
-            <strong>Diferencia:</strong> $
-            {(oficial.venta - oficial.compra).toLocaleString("es-AR", {
+            <strong>Diferencia: </strong>${" "}
+            {(peso.venta - peso.compra).toLocaleString("es-Ar", {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
             })}
           </p>
-
           <p className="actualizacion">
-            <strong>Última actualización:{String.fromCodePoint(0x23f3)}</strong>
-            {oficial.fechaActualizacion
-              ? new Date(oficial.fechaActualizacion).toLocaleString("es-ES", {
+            <strong>Ultima actualización: </strong>
+            {peso.fechaActualizacion
+              ? new Date(peso.fechaActualizacion).toLocaleDateString("es-ES", {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
@@ -70,10 +69,10 @@ const DolarOficial = () => {
           </p>
         </div>
       ) : (
-        <p>Cargando datos...</p>
+        <p>Cargando datos</p>
       )}
     </div>
   );
 };
 
-export default DolarOficial;
+export default PesoUruguayo;

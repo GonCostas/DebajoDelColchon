@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
-import { DolarDatos } from "../../services/types/DolarDatos";
+import { DatosMonedas } from "../../services/types/DatosMonedas";
 import IconoInfo from "../IconoInfo";
 import "../../css/caja.css";
 
 const DolarMayorista = () => {
-  const [dolarMayor, setDolarMayor] = useState<DolarDatos | null>(null);
+  const [dolarMayor, setDolarMayor] = useState<DatosMonedas | null>(null);
 
   useEffect(() => {
     async function obtenerDolarMayor() {
       try {
         const respuesta = await fetch("https://dolarapi.com/v1/dolares/cripto");
-        const datos: DolarDatos = await respuesta.json();
+        const datos: DatosMonedas = await respuesta.json();
         setDolarMayor(datos);
       } catch (error) {
         console.log("Error al obneter los datos de dolar cripto", error);

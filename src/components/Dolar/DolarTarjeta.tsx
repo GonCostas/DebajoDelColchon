@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { DolarDatos } from "../../services/types/DolarDatos";
+import { DatosMonedas } from "../../services/types/DatosMonedas";
 import "../../css/caja.css";
 import IconoInfo from "../IconoInfo";
 
 const DolarTarjeta = () => {
-  const [dolarTarjeta, setDolarTarjeta] = useState<DolarDatos | null>(null);
+  const [dolarTarjeta, setDolarTarjeta] = useState<DatosMonedas | null>(null);
 
   useEffect(() => {
     async function obtenerDolarTarjeta() {
@@ -12,7 +12,7 @@ const DolarTarjeta = () => {
         const respuesta = await fetch(
           "https://dolarapi.com/v1/dolares/tarjeta"
         );
-        const datos: DolarDatos = await respuesta.json();
+        const datos: DatosMonedas = await respuesta.json();
         setDolarTarjeta(datos);
       } catch (error) {
         console.log("Error al obtener datos del dolar tarjeta", error);

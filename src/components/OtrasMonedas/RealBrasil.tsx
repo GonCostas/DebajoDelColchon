@@ -1,67 +1,64 @@
 import { useEffect, useState } from "react";
 import { DatosMonedas } from "../../services/types/DatosMonedas";
-import "../../css/caja.css";
 import IconoInfo from "../IconoInfo";
+import "../../css/caja.css";
 
-const DolarBlue = () => {
-  const [dolarBlue, setDolarBlue] = useState<DatosMonedas | null>(null);
+const RealBrasil = () => {
+  const [real, setReal] = useState<DatosMonedas | null>(null);
 
   useEffect(() => {
-    async function obtenerDatosDolarBlue() {
+    async function obtenerDatosReal() {
       try {
-        const respuesta = await fetch("https://dolarapi.com/v1/dolares/blue");
+        const respuesta = await fetch(
+          "https://dolarapi.com/v1/cotizaciones/brl"
+        );
         const datos: DatosMonedas = await respuesta.json();
-        setDolarBlue(datos);
+        setReal(datos);
       } catch (error) {
         console.log("Error al obtener los datos", error);
       }
     }
-    obtenerDatosDolarBlue();
+    obtenerDatosReal();
   }, []);
 
-  if (!dolarBlue) {
-    <p>Cargando DolarBlue...</p>;
-  }
   return (
     <div className="caja">
       <h2 className="titulo">
-        DOLAR BLUE
+        REAL BRASILEÑO
         <IconoInfo
-          id="tooltip-dolarBlue"
-          texto="Cotización del dólar estadounidense en el mercado paralelo o informal. Es decir, el precio de compra y venta de dólares en cuevas o casas de cambio no autorizadas por el Banco Central de la República Argentina (BCRA)."
+          id="tooltip-dolarEuro"
+          texto="Cotización del Euro en el mercado."
         />
       </h2>
-      {dolarBlue ? (
+      {real ? (
         <div>
           <div className="grupo">
             <p className="compra">
-              <strong>Compra: </strong>$
-              {dolarBlue.compra.toLocaleString("es-AR", {
+              <strong>Compra: </strong> $
+              {real.compra.toLocaleString("es-AR", {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
               })}
             </p>
             <p className="venta">
               <strong>Venta: </strong>$
-              {dolarBlue.venta.toLocaleString("es-AR", {
+              {real.venta.toLocaleString("es-AR", {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
               })}
             </p>
           </div>
           <p>
-            <strong>Diferencia: </strong> $
-            {(dolarBlue.venta - dolarBlue.compra).toLocaleString("es-AR", {
+            <strong>Diferencia: </strong>${" "}
+            {(real.venta - real.compra).toLocaleString("es-Ar", {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
             })}
           </p>
           <p className="actualizacion">
-            <strong>
-              Última actualización: {String.fromCodePoint(0x23f3)}{" "}
-            </strong>
-            {dolarBlue.fechaActualizacion
-              ? new Date(dolarBlue.fechaActualizacion).toLocaleString("es-ES", {
+            <strong>Ultima actualización: </strong>
+            {real.fechaActualizacion
+              ? new Date(real.fechaActualizacion).toLocaleDateString("es-ES", {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
@@ -72,9 +69,10 @@ const DolarBlue = () => {
           </p>
         </div>
       ) : (
-        <p>Cargando datos...</p>
+        <p>Cargando datos</p>
       )}
     </div>
   );
 };
-export default DolarBlue;
+
+export default RealBrasil;

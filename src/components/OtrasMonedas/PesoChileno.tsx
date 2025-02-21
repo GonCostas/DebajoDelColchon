@@ -1,64 +1,65 @@
-import { useEffect, useState } from "react";
-import { DolarDatos } from "../../services/types/DolarDatos";
-import IconoInfo from "../IconoInfo";
-import "../../css/caja.css"
 
-const Euro = () => {
-  const [euro, setEuro] = useState<DolarDatos | null>(null);
+import { useEffect, useState } from "react";
+import { DatosMonedas } from "../../services/types/DatosMonedas";
+import IconoInfo from "../IconoInfo";
+import "../../css/caja.css";
+
+const PesoChileno= () => {
+  const [pesoChileno, setPesoChileno] = useState<DatosMonedas| null>(null);
 
   useEffect(() => {
-    async function obtenerDatosEuro() {
+    async function obtenerDatosPesoChileno() {
       try {
         const respuesta = await fetch(
           "https://dolarapi.com/v1/cotizaciones/eur"
         );
-        const datos: DolarDatos = await respuesta.json();
-        setEuro(datos);
+        const datos: DatosMonedas = await respuesta.json();
+        setPesoChileno(datos);
       } catch (error) {
         console.log("Error al obtener los datos", error);
       }
     }
-    obtenerDatosEuro();
+    obtenerDatosPesoChileno();
   }, []);
 
   return (
     <div className="caja">
       <h2 className="titulo">
-        EURO
+        PESO CHILENO
         <IconoInfo
-          id="tooltip-dolarEuro"
+          id="tooltip-dolarPesoChileno"
           texto="Cotización del Real Brasileño en el mercado."
         />
       </h2>
-      {euro ? (
+      {pesoChileno ? (
         <div>
           <div className="grupo">
             <p className="compra">
-              <strong>Compra: </strong> ${(euro.compra).toLocaleString("es-AR",
-                {
-                  minimumFractionDigits: 2,
-                  maximumFractionDigits: 2, 
-                }
-              )}
+              <strong>Compra: </strong> $
+              {pesoChileno.compra.toLocaleString("es-AR", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              })}
             </p>
             <p className="venta">
-              <strong>Venta: </strong>${(euro.venta).toLocaleString("es-AR",{
+              <strong>Venta: </strong>$
+              {pesoChileno.venta.toLocaleString("es-AR", {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
               })}
             </p>
           </div>
-          <p >
+          <p>
             <strong>Diferencia: </strong>${" "}
-            {(euro.venta - euro.compra).toLocaleString("es-Ar", {
+            {(pesoChileno.venta - pesoChileno.compra).toLocaleString("es-Ar", {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
             })}
           </p>
           <p className="actualizacion">
-            <strong>Ultima actualización</strong>
-            {euro.fechaActualizacion
-              ? new Date(euro.fechaActualizacion).toLocaleDateString("es-ES", {
+            <strong>Ultima actualización: </strong>
+            {pesoChileno.fechaActualizacion
+              ? new Date(pesoChileno.fechaActualizacion).toLocaleDateString("es-ES", {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
@@ -75,4 +76,4 @@ const Euro = () => {
   );
 };
 
-export default Euro;
+export default PesoChileno;

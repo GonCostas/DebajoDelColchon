@@ -13,7 +13,7 @@ const Footer = () => {
           Política de Privacidad
         </Link>
       </p>
-      <div style={{ marginTop: "10px" }}>
+      <div style={{ marginTop:"10px"}}>
         <p>Contacto:</p>
         <div style={{ display: "flex", justifyContent: "center", gap: "15px", fontSize: "24px" }}>
           <a href="https://www.linkedin.com/in/gcostas95/" target="_blank" rel="noopener noreferrer" style={{ color: "white" }} aria-label="LinkedIn">

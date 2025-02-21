@@ -10,8 +10,8 @@ const NavBar: React.FC = () => {
         <a href="/DebajoDelColchon/PageDolar" className="link">
           DOLAR
         </a>
-        <a href="/DebajoDelColchon/PageEuro" className="link">
-          EURO
+        <a href="/DebajoDelColchon/OtrasMonedas" className="link">
+          OTRAS MONEDAS
         </a>
         <a href="/DebajoDelColchon/PageInflacion" className="link">
           INFLACION

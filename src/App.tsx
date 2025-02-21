@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/NavBar";
-import PageEuro from "./pages/PageEuro";
+import PageEuro from "./pages/OtrasMonedas";
 import PageDolar from "./pages/PageDolar";
 import PageInflacion from "./pages/PageInflacion";
 import Footer from "./components/Footer";
@@ -20,7 +20,7 @@ function App() {
       <Routes>
         <Route path="/DebajoDelColchon/" element={<PageDolar />} />
         <Route path="/DebajoDelColchon/pageDolar" element={<PageDolar />} />
-        <Route path="/DebajoDelColchon/pageEuro" element={<PageEuro />} />
+        <Route path="/DebajoDelColchon/OtrasMonedas" element={<PageEuro />} />
         <Route
           path="/DebajoDelColchon/pageInflacion"
           element={<PageInflacion />}

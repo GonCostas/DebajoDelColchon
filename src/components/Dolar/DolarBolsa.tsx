@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
-import { DolarDatos } from "../../services/types/DolarDatos";
+import { DatosMonedas } from "../../services/types/DatosMonedas";
 import IconoInfo from "../IconoInfo";
 import "../../css/caja.css";
 
 const DolarBolsa = () => {
-  const [dolarBolsa, setDolarBolsa] = useState<DolarDatos | null>(null);
+  const [dolarBolsa, setDolarBolsa] = useState<DatosMonedas | null>(null);
 
   useEffect(() => {
     async function obtenerDolarBolsa() {
       try {
         const respuesta = await fetch("https://dolarapi.com/v1/dolares/bolsa");
-        const datos: DolarDatos = await respuesta.json();
+        const datos: DatosMonedas = await respuesta.json();
         setDolarBolsa(datos);
       } catch (error) {
         console.log("Error al obtener datos", error);
