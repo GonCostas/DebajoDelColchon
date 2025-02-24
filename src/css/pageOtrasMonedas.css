@@ -1,8 +1,9 @@
 .tituloPrincipal {
   font-family: "Montserrat", sans-serif;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
-  margin-top: 70px;
+  margin-top: 150px;
+  padding-top: 25px;
   text-align: center;
   color: #008f68;
   text-transform: uppercase;

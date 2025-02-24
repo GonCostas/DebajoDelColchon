@@ -3,7 +3,7 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import PageEuro from "./pages/OtrasMonedas";
 import PageDolar from "./pages/PageDolar";
-import PageInflacion from "./pages/PageInflacion";
+
 import Footer from "./components/Footer";
 import PageTyC from "./pages/PageTyC";
 
@@ -21,10 +21,6 @@ function App() {
         <Route path="/DebajoDelColchon/" element={<PageDolar />} />
         <Route path="/DebajoDelColchon/pageDolar" element={<PageDolar />} />
         <Route path="/DebajoDelColchon/OtrasMonedas" element={<PageEuro />} />
-        <Route
-          path="/DebajoDelColchon/pageInflacion"
-          element={<PageInflacion />}
-        />
          <Route path="/terminos-condiciones" element={<PageTyC />} />
       </Routes>
       <Footer/>

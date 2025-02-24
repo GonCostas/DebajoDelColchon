@@ -5,7 +5,6 @@ import DolarTarjeta from "../components/Dolar/DolarTarjeta";
 import "../css/pageDolar.css"
 import DolarBolsa from "../components/Dolar/DolarBolsa";
 import DolarMayorista from "../components/Dolar/DolarMayorista";
-
 const PageDolar = () => {
   return (
     <div>
@@ -18,7 +17,6 @@ const PageDolar = () => {
         <DolarBolsa/>
         <DolarMayorista/>
       </div>
-
     </div>
   );
 };

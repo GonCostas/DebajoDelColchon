@@ -28,7 +28,7 @@ const PesoChileno= () => {
         PESO CHILENO
         <IconoInfo
           id="tooltip-dolarPesoChileno"
-          texto="Cotización del Real Brasileño en el mercado."
+          texto="Cotización del Peso Chileno en el mundo."
         />
       </h2>
       {pesoChileno ? (

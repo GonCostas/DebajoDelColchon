@@ -27,7 +27,7 @@ const PesoUruguayo = () => {
         PESO URUGUAYO
         <IconoInfo
           id="tooltip-dolarEuro"
-          texto="Cotización del Euro en el mercado."
+          texto="Cotización del peso Uruguayo"
         />
       </h2>
       {peso ? (

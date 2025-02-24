@@ -1,5 +1,6 @@
 import "../css/NavBar.css";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const NavBar: React.FC = () => {
   return (
@@ -10,12 +11,9 @@ const NavBar: React.FC = () => {
         <a href="/DebajoDelColchon/PageDolar" className="link">
           DOLAR
         </a>
-        <a href="/DebajoDelColchon/OtrasMonedas" className="link">
+        <Link to="/DebajoDelColchon/OtrasMonedas" className="link">
           OTRAS MONEDAS
-        </a>
-        <a href="/DebajoDelColchon/PageInflacion" className="link">
-          INFLACION
-        </a>
+        </Link>
       </div>
     </nav>
   );
